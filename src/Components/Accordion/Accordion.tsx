@@ -1,12 +1,13 @@
 
 type AccordionType = {
     title: string
+    collapsed: boolean
 }
 
 export const Accordion = (props: AccordionType) => {
     return <>
         <AccordionTitle title={props.title}/>
-        <AccordionBody/>
+        {props.collapsed && <AccordionBody/>}
     </>
 }
 
@@ -15,7 +16,7 @@ type AccordionTitleProps = {
 }
 
 const AccordionTitle = (props: AccordionTitleProps) => {
-    return <h3>{props.title}</h3>
+    return <h3>-----{props.title}-----</h3>
 }
 
 const AccordionBody = () => {
